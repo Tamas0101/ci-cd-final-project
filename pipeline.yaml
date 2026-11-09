@@ -1,0 +1,9 @@
+# Draft: add tasks before applying this pipeline to the cluster.
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: ci-cd-pipeline
+spec:
+  workspaces:
+    - name: output
+  tasks: []
