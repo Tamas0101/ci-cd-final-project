@@ -12,3 +12,15 @@ spec:
       workspaces:
         - name: source
           workspace: output
+    - name: git-clone
+      runAfter:
+        - cleanup
+      taskRef:
+        kind: ClusterTask
+        name: git-clone
+      params:
+        - name: url
+          value: https://github.com/ibm-developer-skills-network/wtecc-CICD_PracticeCode
+      workspaces:
+        - name: output
+          workspace: output
