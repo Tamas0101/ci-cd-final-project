@@ -1,4 +1,3 @@
-# Draft: add tasks before applying this pipeline to the cluster.
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
@@ -6,4 +5,10 @@ metadata:
 spec:
   workspaces:
     - name: output
-  tasks: []
+  tasks:
+    - name: cleanup
+      taskRef:
+        name: cleanup
+      workspaces:
+        - name: source
+          workspace: output
