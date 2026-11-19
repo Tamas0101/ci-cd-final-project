@@ -24,3 +24,7 @@ spec:
             value: $(tt.params.repository)
           - name: branch
             value: $(tt.params.branch)
+        workspaces:
+          - name: pipeline-workspace
+            persistentVolumeClaim:
+              claimName: pipelinerun-pvc
